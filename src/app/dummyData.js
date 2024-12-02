@@ -235,3 +235,26 @@ export const teamData = [
         img: '/images/user-profile.png'
     }
 ]
+
+export const faqsData = [
+    {
+        ques: 'What services we can offer?',
+        ans: 'We provide a wide range of IT services, including web development, mobile app development, cloud solutions, IT consulting, cybersecurity, managed IT support, and digital marketing. Whether you’re looking to build a website or secure your business systems, we’ve got you covered.'
+    },
+    {
+        ques: 'How can your IT services help my business grow?',
+        ans: 'Our services are designed to optimize your business operations, enhance your online presence, and improve efficiency. From creating robust websites to implementing secure and scalable IT infrastructure, we help businesses achieve sustainable growth and stay ahead in the digital era.'
+    },
+    {
+        ques: 'Do you customize your services based on business needs?',
+        ans: ' Absolutely! We understand that every business is unique. We offer tailored solutions to meet your specific goals and challenges, ensuring that our services align perfectly with your business requirements.'
+    },
+    {
+        ques: 'What industries do we specialize in?',
+        ans: ' We prioritize data security by implementing industry-leading practices, including encryption, firewalls, regular audits, and compliance with global standards like GDPR. Your data’s safety is our top priority.'
+    },
+    {
+        ques: 'How can I get started with your services?',
+        ans: 'We provide a wide range of IT services, including web development, mobile app development, cloud solutions, IT consulting, cybersecurity, managed IT support, and digital marketing. Whether you’re looking to build a website or secure your business systems, we’ve got you covered.'
+    },
+]

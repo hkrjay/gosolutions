@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Dialog, DialogBody, DialogFooter, DialogHeader, Typography } from "@material-tailwind/react";
+import { Button, Dialog, DialogBody, DialogFooter, DialogHeader, Input, Textarea, Typography } from "@material-tailwind/react";
 import { useState } from "react";
 import { FeatureCard } from "./components/featurecard";
 import { features } from "./dummyData";
@@ -8,6 +8,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { RiFileCodeLine, RiFileTransferLine } from "react-icons/ri";
 import { ProjectCard } from "./components/projectcard";
 import Link from "next/link";
+import GetStartedModal from "./components/getStartedModal";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -19,11 +20,11 @@ export default function Home() {
       <section className="relative h-full w-full z-0 lg:py-52 md:py-44 sm:py-28 bg-[url('/images/bg.webp')] bg-cover bg-center bg-fixed bg-no-repeat">
 
         {/* Content */}
-        <div className="text-white lg:max-w-screen-xl mx-auto sm:max-w-screen-sm">
+        <div className="lg:max-w-screen-xl mx-auto sm:max-w-screen-sm">
           <div className="grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
             <div>
-              <h1 className="lg:text-4xl sm:text-3xl font-semibold mb-4">Professional IT Services</h1>
-              <p className="lg:text-sm sm:text-sm mb-6 text-gray-400 leading-6">
+              <h1 className="lg:text-4xl sm:text-3xl font-semibold mb-4 text-gray-200 ">Professional IT Solutions & Services</h1>
+              <p className="text-sm mb-6 text-gray-300 font-light leading-relaxed">
                 GoSolutions guarantees the highest standards in coding and design practices. Seamlessly integrating stunning styles and elements, It empowers you to effortlessly create a professional website that truly shines.
               </p>
               <Button onClick={handleOpen} variant="gradient" className="">
@@ -33,8 +34,8 @@ export default function Home() {
             <div className="lg:hidden h-16 clear-both"></div>
             <div className="relative">
               <img src="/images/b1.jpg" className="w-[70%] relative z-30 top-0 right-20 translate-x-1/2 rounded-lg" />
-              <img src="/images/b2.jpg" className="w-[55%] z-20 absolute lg:right-0 lg:-top-14 sm:-top-8 sm:right-3 rounded-lg" />
-              <img src="/images/b3.jpg" className="w-[45%] absolute z-10 lg:-bottom-12 sm:-bottom-8 sm:left-0 lg:left-10 right-64 rounded-lg" />
+              <img src="/images/b2.jpg" className="w-[55%] z-20 absolute lg:right-0 lg:-top-20 sm:-top-8 sm:right-3 rounded-lg" />
+              <img src="/images/b3.jpg" className="w-[45%] absolute z-10 lg:-bottom-16 sm:-bottom-8 sm:left-0 lg:left-10 right-64 rounded-lg" />
             </div>
           </div>
         </div>
@@ -113,7 +114,7 @@ export default function Home() {
                 <Typography variant="h3" className="pb-3 lg:text-3xl sm:text-2xl">
                   Have a project in mind?
                 </Typography>
-                <Typography variant="paragraph">
+                <Typography as="paragraph">
                   Let us turn your ideas into reality. Let&rsquo;s collaborate to build something remarkable and achieve success together.
                 </Typography>
               </div>
@@ -148,28 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Dialog open={open} handler={handleOpen}>
-        <DialogHeader>Its a simple dialog.</DialogHeader>
-        <DialogBody>
-          The key to more success is to have a lot of pillows. Put it this way,
-          it took me twenty five years to get these plants, twenty five years of
-          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
-          getting started. I&apos;m up to something. Fan luv.
-        </DialogBody>
-        <DialogFooter>
-          <Button
-            variant="text"
-            color="red"
-            onClick={handleOpen}
-            className="mr-1"
-          >
-            <span>Cancel</span>
-          </Button>
-          <Button variant="gradient" color="green" onClick={handleOpen}>
-            <span>Confirm</span>
-          </Button>
-        </DialogFooter>
-      </Dialog>
+      <GetStartedModal open={open} handleOpen={handleOpen} />
     </>
   );
 }
