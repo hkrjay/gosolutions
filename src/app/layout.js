@@ -1,15 +1,11 @@
-import localFont from "next/font/local";
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import "./globals.css";
+import { Header } from './components/header';
+import { Footer } from './components/footer';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+export const plus_jakarta_sans = Plus_Jakarta_Sans({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin'],
 });
 
 export const metadata = {
@@ -21,9 +17,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${plus_jakarta_sans.className} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
