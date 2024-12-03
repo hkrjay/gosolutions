@@ -3,7 +3,7 @@
 import { Button, Dialog, DialogBody, DialogFooter, DialogHeader, Input, Textarea, Typography } from "@material-tailwind/react";
 import { useState } from "react";
 import { FeatureCard } from "./components/featurecard";
-import { features } from "./dummyData";
+import { features, projectData } from "./dummyData";
 import { FaUserFriends } from "react-icons/fa";
 import { RiFileCodeLine, RiFileTransferLine } from "react-icons/ri";
 import { ProjectCard } from "./components/projectcard";
@@ -61,15 +61,15 @@ export default function Home() {
           <div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:gap-y-0 sm:gap-y-10 gap-x-10">
             <div className="flex flex-col items-center gap-3">
               <div className=" rounded-full bg-gray-500/35 w-24 h-24 flex items-center justify-center"><FaUserFriends size={50} className="text-gray-200" /></div>
-              <Typography className="text-gray-200 text-xl font-medium"> 20+ Clients</Typography>
+              <Typography className="text-gray-200 text-2xl font-medium"> 20+ Clients</Typography>
             </div>
             <div className="flex flex-col items-center gap-3">
               <div className=" rounded-full bg-gray-500/35 w-24 h-24 flex items-center justify-center"><RiFileCodeLine size={50} className="text-gray-200" /></div>
-              <Typography className="text-gray-200 text-xl font-medium"> 5+ Experience</Typography>
+              <Typography className="text-gray-200 text-2xl font-medium"> 5+ Experience</Typography>
             </div>
             <div className="flex flex-col items-center gap-3">
               <div className=" rounded-full bg-gray-500/35 w-24 h-24 flex items-center justify-center"><RiFileTransferLine size={50} className="text-gray-200" /></div>
-              <Typography className="text-gray-200 text-xl font-medium"> OnTime Delivery</Typography>
+              <Typography className="text-gray-200 text-2xl font-medium"> OnTime Delivery</Typography>
             </div>
           </div>
         </div>
@@ -84,24 +84,9 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-8">
-            <Link href={"#"}>
-              <ProjectCard />
-            </Link>
-            <Link href={"#"}>
-              <ProjectCard />
-            </Link>
-            <Link href={"#"}>
-              <ProjectCard />
-            </Link>
-            <Link href={"#"}>
-              <ProjectCard />
-            </Link>
-            <Link href={"#"}>
-              <ProjectCard />
-            </Link>
-            <Link href={"#"}>
-              <ProjectCard />
-            </Link>
+            {projectData.map((project, index) => (
+              <ProjectCard key={index} data={project} />
+            ))}
           </div>
         </div>
       </section>
@@ -114,9 +99,9 @@ export default function Home() {
                 <Typography variant="h3" className="pb-3 lg:text-3xl sm:text-2xl">
                   Have a project in mind?
                 </Typography>
-                <Typography as="paragraph">
+                <p>
                   Let us turn your ideas into reality. Let&rsquo;s collaborate to build something remarkable and achieve success together.
-                </Typography>
+                </p>
               </div>
               <Button className="flex items-center gap-2 w-fit">
                 Contact with us
@@ -142,9 +127,9 @@ export default function Home() {
           </div>
           <div className="grid lg:grid-cols-2 sm:gap-y-5 sm:grid-cols-1 mt-10">
             <Typography variant={'h2'} className="text-gray-900 font-semibold lg:text-4xl sm:text-2xl">Let&rsquo;s work together to build a thriving business.</Typography>
-            <Typography as={'paragraph'} className="text-justify">
+            <p className="text-justify">
               Partnering with us means you&rsquo;re not growing your business alone. We&rsquo;re here to support you every step of the way, dedicating our expertise to driving the success of your team and organization. If you&rsquo;re searching for the right agency to enhance your online presence, boost conversions, and increase revenue, look no further – we&rsquo;ve got you covered!
-            </Typography>
+            </p>
           </div>
         </div>
       </section>

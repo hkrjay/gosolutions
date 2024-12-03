@@ -76,7 +76,7 @@ export function Header() {
       >
         <div className="flex items-center justify-between text-blue-gray-900 max-w-screen-xl mx-auto">
           <div className="flex items-center gap-3">
-            <p className="bg-gray-200/50 rounded-full h-10 w-10 text-lg font-bold text-blue-800 flex items-center justify-center ">
+            <p className="bg-gray-200 rounded-full h-10 w-10 text-lg font-bold text-blue-800 flex items-center justify-center ">
               GS
             </p>
             <Link

@@ -258,3 +258,16 @@ export const faqsData = [
         ans: 'We provide a wide range of IT services, including web development, mobile app development, cloud solutions, IT consulting, cybersecurity, managed IT support, and digital marketing. Whether you’re looking to build a website or secure your business systems, we’ve got you covered.'
     },
 ]
+
+export const projectData = [
+    {
+        title: 'SaveMax (next.js)',
+        img: 'savemaxweb.png',
+        lnk: 'https://savemax.com/'
+    },
+    {
+        title: 'Platinum Visionaries (wordpress)',
+        img: 'platinumv.png',
+        lnk: 'https://platinumvisionaries.com/'
+    },
+]
