@@ -2,6 +2,7 @@
 
 import {
   Button,
+  Carousel,
   Dialog,
   DialogBody,
   DialogFooter,
@@ -14,9 +15,30 @@ import { servicesData } from "../dummyData";
 import GetStartedModal from "../components/getStartedModal";
 
 const Services = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState({
+    title: '',
+    state: false
+  });
 
-  const handleOpen = () => setOpen(!open);
+  const handleOpen = (title) => setOpen((prev) => ({
+    title,
+    state: !prev.state
+  }));
+
+  const techData = [
+    {
+      title: 'HTML',
+      img: '/images/gs_logo.png',
+    },
+    {
+      title: 'CSS',
+      img: '/images/logo.png'
+    },
+    {
+      title: 'JS',
+      img: '/gs_logo.png'
+    }
+  ]
 
   return (
     <>
@@ -51,6 +73,7 @@ const Services = () => {
           </div>
         </div>
       </section>
+      
       <section className="bg-gray-900 py-20">
         <div className="lg:max-w-screen-xl sm:max-w-screen-sm mx-auto grid lg:grid-cols-2 sm:grid-cols-1 gap-4">
           <div className="relative w-full">
@@ -85,7 +108,8 @@ const Services = () => {
             <hr className="h-[1px] my-5" />
             <Button
               variant="outlined"
-              className="text-white border border-gray-100 hover:bg-blue-700 hover:border-blue-700"
+              className="text-white border border-gray-100 hover:bg-blue-700 hover:border-blue-700 focus:ring-0"
+              onClick={() => handleOpen()}
             >
               Get Started
             </Button>
@@ -93,7 +117,7 @@ const Services = () => {
         </div>
       </section>
 
-      <GetStartedModal open={open} handleOpen={handleOpen} />
+      <GetStartedModal open={open.state} title={open.title} handleOpen={handleOpen} />
     </>
   );
 };

@@ -4,6 +4,7 @@ import { Typography } from '@material-tailwind/react'
 import React from 'react'
 import { footerMenus } from '../dummyData';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -11,11 +12,7 @@ export const Footer = () => {
         <div className='bg-black'>
             <div className='mx-auto w-full lg:max-w-screen-xl sm:max-w-screen-sm'>
                 <div className='grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4'>
-                    <div className='flex gap-3'>
-                        <Typography variant="h4" color='blue' textGradient>
-                            GoSolutions
-                        </Typography>
-                    </div>
+                    <Image src={'/images/gs_logo.png'} alt="GoSolutions Logo" width={50} height={50} />
                     {footerMenus.map(({ title, items }) => (
                         <ul key={title} className="space-y-1 text-gray-200">
                             <Typography

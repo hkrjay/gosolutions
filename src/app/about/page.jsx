@@ -14,10 +14,10 @@ const About = () => {
             </section>
 
             <section className="relative lg:max-w-screen-xl sm:max-w-screen-sm rounded-3xl mx-auto h-ful py-16 my-10 z-0 bg-[url('/images/black_pattern.jpg')] bg-cover bg-fixed bg-no-repeat">
-                <div className="text-white p-10">
-                    <p className='bg-gray-600/40 p-2 w-fit text-xs rounded-md'>Our Vision</p>
+                <div className="text-white p-10 text-center">
+                    <p className='bg-gray-600/40 p-2 w-fit mx-auto text-xs rounded-md'>Our Vision</p>
                     <h1 className="text-4xl font-semibold my-4">Trusted By Business</h1>
-                    <p className="mb-6 text-gray-400 leading-6">
+                    <p className="mb-6 text-gray-400 leading-6 w-9/12 mx-auto">
                         We aspire to create a digital landscape where technology seamlessly enhances productivity, connectivity, and sustainability, fostering a brighter, more efficient, and inclusive future for all.
                     </p>
                     <button className='px-3 py-2 text-sm rounded-md bg-blue-700 border hover:bg-transparent text-gray-200 border-blue-700'>Lets Work Together.</button>

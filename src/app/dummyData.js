@@ -14,32 +14,32 @@ export const features = [
     {
         title: 'tailwindcss framework',
         desc: 'gosolutions using latest tailwind framework. The most camplete and flexible framework for website development.',
-        icon: <RiTailwindCssFill size={40} />
+        img: '/images/tailwindcss.png'
     },
     {
-        title: 'Blazing Speed',
+        title: 'fastest load time',
         desc: 'Say goodbye to frustrating load times and hello to a seamless online experience. Explore, engage, and enjoy without the wait!',
-        icon: <AiFillThunderbolt size={40} />
+        img: '/images/flash.png'
     },
     {
         title: 'Responsive Layouts',
         desc: 'UpTech layouts can fit to all screens sizes so it looks great on any kind of devices. One website for all devices.',
-        icon: <GrPersonalComputer size={40} />
+        img: '/images/responsive.png'
     },
     {
         title: 'react library',
         desc: 'gosolutions using latest tailwind framework. The most camplete and flexible framework for website development.',
-        icon: <RiReactjsLine size={40} />
+        img: '/images/reactjs.png'
     },
     {
-        title: 'Swiper Slider',
+        title: 'SEO optimization',
         desc: 'Swiper is the most modern free and open source slider with hardware accelerated transitions and amazing native behavior.',
-        icon: <SiSwiper size={40} />
+        img: '/images/seo.png'
     },
     {
-        title: 'Node.js',
+        title: 'Page Experience',
         desc: 'Swiper is the most modern free and open source slider with hardware accelerated transitions and amazing native behavior.',
-        icon: <RiNodejsLine size={40} />
+        img: '/images/page-ex.png'
     }
 ]
 
@@ -136,52 +136,45 @@ export const footerMenus = [
 export const servicesData = [
     {
         id: 1,
-        service: 'Managed IT Services',
+        service: 'Technical Support',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
-        icon: <MdDataUsage size={45} />
+        img: 'technical-support.png'
     },
     {
         id: 2,
         service: 'software development',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
-        icon: <GrServices size={45} />
+        img: 'development.png'
     },
     {
         id: 4,
         service: 'database management',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
-        icon: <FiDatabase size={45} />
+        img: 'database.png'
     },
     {
         id: 5,
-        service: 'network services',
+        service: 'Landing Pages',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
-        icon: <PiNetworkDuotone size={45} />
+        img: 'landing_pagespng.png'
     },
     {
         id: 6,
-        service: 'website development',
+        service: 'network services',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
-        icon: <FaCode size={45} />
+        img: 'network.png'
     },
     {
         id: 7,
         service: 'UI/UX design',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
-        icon: <GrServices size={45} />
-    },
-    {
-        id: 8,
-        service: 'Landing Pages',
-        desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
-        price: 1000,
-        icon: <GrServices size={45} />
+        img: 'ux-design.png'
     },
 ]
 
@@ -222,18 +215,6 @@ export const teamData = [
         position: 'Specialist Backend Developer',
         img: '/images/user-profile.png'
     },
-    {
-        id: 107,
-        name: 'XYZ',
-        position: 'Developer',
-        img: '/images/user-profile.png'
-    },
-    {
-        id: 108,
-        name: 'XYZ',
-        position: 'Developer',
-        img: '/images/user-profile.png'
-    }
 ]
 
 export const faqsData = [
