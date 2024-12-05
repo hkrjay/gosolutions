@@ -19,16 +19,6 @@ export function Header() {
   const [openNav, setOpenNav] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [open, setOpen] = useState(false);
-  const [menus, setMenus] = useState([])
-
-  useEffect(() => {
-    const getMenus = async () => {
-      fetch('http://localhost:4004/headermenus')
-        .then(res => res.json())
-        .then(data => setMenus(data))
-    }
-    getMenus()
-  }, [])
 
   const handleOpen = () => setOpen(!open);
 
@@ -50,7 +40,7 @@ export function Header() {
   function NavList() {
     return (
       <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-        {menus?.map((menu) => (
+        {headerMenu?.map((menu) => (
           <Typography
             key={menu.id}
             as="li"

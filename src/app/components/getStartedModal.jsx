@@ -39,7 +39,7 @@ export const GetStartedModal = ({ open, handleOpen, title = 'Get Started With Us
     >
       <DialogHeader className="capitalize">{title}</DialogHeader>
       <DialogBody className="pt-0">
-        <form name="contact" netlify className="flex flex-col gap-5">
+        <form name="contact" className="flex flex-col gap-5" method="POST" data-netlify="true">
           <Input type="text" autoComplete="off" color="blue" name="name" label="Your Name" value={values.name} onChange={handleChange} />
           <Input type="email" autoComplete="off" color="blue" name="email" label="Your Email" value={values.email} onChange={handleChange} />
           <Textarea color="blue" autoComplete="off" name="message" label="Message" value={values.message} onChange={handleChange} />
