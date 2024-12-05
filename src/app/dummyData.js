@@ -1,45 +1,33 @@
-import { RiTailwindCssFill } from "react-icons/ri";
-import { AiFillThunderbolt } from "react-icons/ai";
-import { GrPersonalComputer } from "react-icons/gr";
-import { RiReactjsLine } from "react-icons/ri";
-import { SiSwiper } from "react-icons/si";
-import { RiNodejsLine } from "react-icons/ri";
-import { GrServices } from "react-icons/gr";
-import { MdDataUsage } from "react-icons/md";
-import { FiDatabase } from "react-icons/fi";
-import { FaCode } from "react-icons/fa";
-import { PiNetworkDuotone } from "react-icons/pi";
-
 export const features = [
     {
         title: 'tailwindcss framework',
         desc: 'gosolutions using latest tailwind framework. The most camplete and flexible framework for website development.',
-        img: '/images/tailwindcss.png'
+        img: 'tailwindcss.png'
     },
     {
         title: 'fastest load time',
         desc: 'Say goodbye to frustrating load times and hello to a seamless online experience. Explore, engage, and enjoy without the wait!',
-        img: '/images/flash.png'
+        img: 'flash.png'
     },
     {
         title: 'Responsive Layouts',
         desc: 'UpTech layouts can fit to all screens sizes so it looks great on any kind of devices. One website for all devices.',
-        img: '/images/responsive.png'
+        img: 'responsive.png'
     },
     {
         title: 'react library',
         desc: 'gosolutions using latest tailwind framework. The most camplete and flexible framework for website development.',
-        img: '/images/reactjs.png'
+        img: 'reactjs.png'
     },
     {
         title: 'SEO optimization',
         desc: 'Swiper is the most modern free and open source slider with hardware accelerated transitions and amazing native behavior.',
-        img: '/images/seo.png'
+        img: 'seo.png'
     },
     {
         title: 'Page Experience',
         desc: 'Swiper is the most modern free and open source slider with hardware accelerated transitions and amazing native behavior.',
-        img: '/images/page-ex.png'
+        img: 'page-ex.png'
     }
 ]
 

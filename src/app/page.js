@@ -83,7 +83,7 @@ export default function Home() {
           <div>
             <h6 className="text-xs bg-gray-600/30 text-white rounded-sm px-2 py-1 w-fit">All demo are included</h6>
             <h2 className="text-3xl font-medium mt-3 text-gray-200 mb-7">
-              Demo Preview
+              Project Preview
             </h2>
           </div>
           <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-8">

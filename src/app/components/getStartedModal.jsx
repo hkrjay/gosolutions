@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import { Button, Dialog, DialogBody, DialogFooter, DialogHeader, Input, Textarea } from "@material-tailwind/react";
+import { Button, Dialog, DialogBody, DialogHeader, Input, Textarea } from "@material-tailwind/react";
 import { PostApi } from "../lib/postapi";
 
 export const GetStartedModal = ({ open, handleOpen, title = 'Get Started With Us.' }) => {
@@ -39,25 +39,30 @@ export const GetStartedModal = ({ open, handleOpen, title = 'Get Started With Us
     >
       <DialogHeader className="capitalize">{title}</DialogHeader>
       <DialogBody className="pt-0">
-        <form className="flex flex-col gap-5">
+        <form name="contact" netlify className="flex flex-col gap-5">
           <Input type="text" autoComplete="off" color="blue" name="name" label="Your Name" value={values.name} onChange={handleChange} />
           <Input type="email" autoComplete="off" color="blue" name="email" label="Your Email" value={values.email} onChange={handleChange} />
           <Textarea color="blue" autoComplete="off" name="message" label="Message" value={values.message} onChange={handleChange} />
+          <div className="flex items-center justify-end">
+            <Button
+              type="button"
+              variant="text"
+              color="red"
+              onClick={handleOpen}
+              className="mr-1"
+            >
+              <span>Cancel</span>
+            </Button>
+            <Button
+              type="submit"
+              variant="gradient"
+              color="blue"
+            >
+              <span>Submit</span>
+            </Button>
+          </div>
         </form>
       </DialogBody>
-      <DialogFooter className="bg-gray-100">
-        <Button
-          variant="text"
-          color="red"
-          onClick={handleOpen}
-          className="mr-1"
-        >
-          <span>Cancel</span>
-        </Button>
-        <Button variant="gradient" color="blue" onClick={handleSubmit}>
-          <span>Submit</span>
-        </Button>
-      </DialogFooter>
     </Dialog>
   );
 };

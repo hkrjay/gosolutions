@@ -20,7 +20,7 @@ export function ProjectCard({ data: { title, img, lnk } }) {
           shadow={false}
           color="transparent"
           className="absolute inset-0 m-0 h-full w-full rounded-none bg-cover bg-left-top bg-no-repeat"
-          style={{ backgroundImage: `url('/images/${img}')` }}
+          style={{ backgroundImage: `url('/images/projectSS/${img}')` }}
         >
           <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50" />
         </CardHeader>
