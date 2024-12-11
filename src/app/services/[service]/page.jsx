@@ -24,28 +24,28 @@ const Service = () => {
                     <div className='grid lg:grid-cols-2 sm:grid-cols-1 items-center'>
                         <img src='/images/sub_service_img.png' />
                         <div>
-                            <p className='text-sm text-blue-900 font-medium sm:mt-10 lg:mt-0'>// About Service</p>
+                            <p className='text-sm text-blue-900 font-medium sm:mt-10 lg:mt-0'># About Service</p>
                             <Typography variant='h2' className='font-extrabold lg:text-4xl sm:text-3xl'>We Provide Best <br /> Web Development</Typography>
                             <div className='grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-10 mt-10'>
                                 <div className=''>
                                     <p className='text-blue-900 font-semibold'>01.</p>
                                     <Typography variant='h5' className='py-3'>Vanilla JS</Typography>
-                                    <p className='text-gray-700'>We're committed to building sustainable and high-quality Java solutions.</p>
+                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
                                 </div>
                                 <div className=''>
                                     <p className='text-blue-900 font-semibold'>02.</p>
                                     <Typography variant='h5' className='py-3'>React.js</Typography>
-                                    <p className='text-gray-700'>We're committed to building sustainable and high-quality Java solutions.</p>
+                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
                                 </div>
                                 <div className=''>
                                     <p className='text-blue-900 font-semibold'>03.</p>
                                     <Typography variant='h5' className='py-3'>Next.js</Typography>
-                                    <p className='text-gray-700'>We're committed to building sustainable and high-quality Java solutions.</p>
+                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
                                 </div>
                                 <div className=''>
                                     <p className='text-blue-900 font-semibold'>04.</p>
                                     <Typography variant='h5' className='py-3'>Vue.js</Typography>
-                                    <p className='text-gray-700'>We're committed to building sustainable and high-quality Java solutions.</p>
+                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
                                 </div>
                             </div>
                         </div>
@@ -124,9 +124,9 @@ const Service = () => {
             <section className="bg-[url('/images/blue-bg.png')] py-20 mb-20">
                 <div className='lg:max-w-screen-xl sm:max-w-screen-sm mx-auto'>
                     <div className='flex flex-col ;g:gap-5 sm:gap-7 text-center text-gray-100'>
-                        <Typography variant='h1' className='lg:text-5xl sm:text-3xl'>Let's work together</Typography>
+                        <Typography variant='h1' className='lg:text-5xl sm:text-3xl'>Let&rsquo;s work together</Typography>
                         <p className='lg:text-base sm:text-sm'>Each demo built with Teba will look different. You can customize anything <br /> appearance of your website with only a few clicks</p>
-                        <Button className='w-fit mx-auto bg-blue-700 py-4 capitalize text-sm shadow-animate'>Let's Start a Project</Button>
+                        <Button className='w-fit mx-auto bg-blue-700 py-4 capitalize text-sm shadow-animate'>Let&rsquo;s Start a Project</Button>
                     </div>
                 </div>
             </section>

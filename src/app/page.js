@@ -513,21 +513,21 @@ export default function Home() {
               <div className='bg-gray-100 lg:w-24 lg:h-24 sm:w-20 sm:h-20 rounded-full flex items-center justify-center text-blue-900'><HiOutlineLightBulb size={55} className='' /></div>
               <div className='text-gray-100'>
                 <h6 className='text-md font-medium'>Data Analysis</h6>
-                <p className='text-gray-400 text-sm pt-3'>We conduct through data collection and analysis of your institution's current strenghts and differentiators.</p>
+                <p className='text-gray-400 text-sm pt-3'>We conduct through data collection and analysis of your institution&rsquo;s current strenghts and differentiators.</p>
               </div>
             </div>
             <div className='flex flex-col items-center gap-7'>
               <div className='bg-gray-100 lg:w-24 lg:h-24 sm:w-20 sm:h-20  rounded-full flex items-center justify-center text-blue-900'><IoDiamondOutline size={55} className='' /></div>
               <div className='text-gray-100'>
                 <h6 className='text-md font-medium'>Making Plan</h6>
-                <p className='text-gray-400 text-sm pt-3'>We conduct through data collection and analysis of your institution's current strenghts and differentiators.</p>
+                <p className='text-gray-400 text-sm pt-3'>We conduct through data collection and analysis of your institution&rsquo;s current strenghts and differentiators.</p>
               </div>
             </div>
             <div className='flex flex-col items-center gap-7'>
               <div className='bg-gray-100 lg:w-24 lg:h-24 sm:w-20 sm:h-20  rounded-full flex items-center justify-center text-blue-900'><SlRocket size={55} className='' /></div>
               <div className='text-gray-100'>
                 <h6 className='text-md font-medium'>Deliver Result</h6>
-                <p className='text-gray-400 text-sm pt-3'>We conduct through data collection and analysis of your institution's current strenghts and differentiators.</p>
+                <p className='text-gray-400 text-sm pt-3'>We conduct through data collection and analysis of your institution&rsquo;s current strenghts and differentiators.</p>
               </div>
             </div>
           </div>
@@ -595,8 +595,8 @@ export default function Home() {
           <div className='grid lg:grid-cols-2 sm:grid-cols-1 sm:gap-y-14 gap-x-20 justify-between items-center'>
             <div className='flex flex-col gap-5'>
               <h2 className='lg:text-4xl sm:text-3xl text-gray-100'>Have a project in mind?</h2>
-              <p className='text-gray-400 lg:text-base sm:text-sm'>Let us turn your ideas into reality. Let's collaborate to build something remarkable and achieve success together.</p>
-              <Button variant="gradient" color='blue' className="bg-blue-700 w-fit">Let's Get Started</Button>
+              <p className='text-gray-400 lg:text-base sm:text-sm'>Let us turn your ideas into reality. Let&rsquo;s collaborate to build something remarkable and achieve success together.</p>
+              <Button variant="gradient" color='blue' className="bg-blue-700 w-fit">Let&rsquo;s Get Started</Button>
             </div>
             <div className='grid grid-cols-2 grid-rows-2 lg:gap-10 sm:gap-5'>
               <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2'>
@@ -736,7 +736,7 @@ export default function Home() {
           <div className='shadow-md lg:px-7 sm:px-5 py-5 lg:mt-10 sm:mt-5'>
             <div className=''>
               <h5 className='text-xl font-medium'>Start a conversation</h5>
-              <p className='lg:text-base sm:text-sm pt-2'>We'd like to hear from you. Use the contact form below and we'll get back to you shortly.</p>
+              <p className='lg:text-base sm:text-sm pt-2'>We&rsquo;d like to hear from you. Use the contact form below and we&rsquo;ll get back to you shortly.</p>
             </div>
             <form>
               <div className='grid lg:grid-cols-3 sm:grid-cols-1 sm:gap-y-5 gap-x-5 pt-5'>
@@ -775,9 +775,9 @@ export default function Home() {
       <section className="bg-gray-900 py-20">
         <div className='lg:max-w-screen-xl sm:max-w-screen-sm mx-auto'>
           <div className='flex flex-col lg:gap-7 sm:gap-7 text-center text-gray-100'>
-            <Typography variant='h1' className='lg:text-4xl sm:text-3xl'>Let's work together</Typography>
+            <Typography variant='h1' className='lg:text-4xl sm:text-3xl'>Let&rsquo;s work together</Typography>
             <p className='lg:text-sm sm:text-sm'>Each demo built with Teba will look different. You can customize anything <br /> appearance of your website with only a few clicks</p>
-            <Button size='sm' className='w-fit mx-auto bg-blue-900 capitalize text-sm shadow-animate'>Let's Start a Project</Button>
+            <Button size='sm' className='w-fit mx-auto bg-blue-900 capitalize text-sm shadow-animate'>Let&rsquo;s Start a Project</Button>
           </div>
         </div>
       </section>
