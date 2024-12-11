@@ -35,22 +35,39 @@ export const headerMenu = [
     {
         id: 1,
         item: 'services',
-        link: '/services'
+        link: '/services',
+        subMenu: [
+            {
+                menu: 'Web Development',
+                lnk: 'web-development'
+            },
+            {
+                menu: 'Software Development',
+                lnk: 'software-development'
+            },
+            {
+                menu: 'technical support',
+                lnk: 'technical-support'
+            },
+        ]
     },
     {
         id: 2,
         item: 'our team',
-        link: '/our-team'
+        link: '/our-team',
+        subMenu: []
     },
     {
         id: 3,
         item: 'about',
-        link: '/about'
+        link: '/about',
+        subMenu: []
     },
     {
         id: 4,
         item: 'contact us',
-        link: '/contact-us'
+        link: '/contact-us',
+        subMenu: []
     },
 ]
 
@@ -138,7 +155,7 @@ export const servicesData = [
     },
     {
         id: 4,
-        service: 'database management',
+        service: 'web development',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
         img: 'database.png'
@@ -240,3 +257,21 @@ export const projectData = [
         lnk: 'https://platinumvisionaries.com/'
     },
 ]
+
+export const tabData = [
+    {
+        label: "analysis",
+        value: "analysis",
+        desc: `Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses elevate their value through custom software development, product design, QA and consultancy services. Our product design service lets you prototype, test and validate your ideas.`,
+    },
+    {
+        label: "design",
+        value: "design",
+        desc: `While integrating the security with the DevOps approach has always been of high demand, this requires a completely different range of processes and tools. DevOps is already known to boast of an agile development methodology. Now when the inputs of the security experts I’ll be brought in a collaborative environment, the project will have an array of effective security safeguards.`,
+    },
+    {
+        label: "testing",
+        value: "testing",
+        desc: `While integrating the security with the DevOps approach has always been of high demand, this requires a completely different range of processes and tools. DevOps is already known to boast of an agile development methodology. Now when the inputs of the security experts I’ll be brought in a collaborative environment, the project will have an array of effective security safeguards.`,
+    },
+];

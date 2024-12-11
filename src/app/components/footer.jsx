@@ -10,7 +10,7 @@ export const Footer = () => {
     const currentYear = new Date().getFullYear();
     return (
         <div className='bg-black'>
-            <div className='mx-auto w-full lg:max-w-screen-xl sm:max-w-screen-sm'>
+            <div className='mx-auto w-full lg:max-w-screen-lg sm:max-w-screen-sm'>
                 <div className='grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4'>
                     <Image src={'/images/gs_logo.png'} alt="GoSolutions Logo" width={50} height={50} />
                     {footerMenus.map(({ title, items }) => (

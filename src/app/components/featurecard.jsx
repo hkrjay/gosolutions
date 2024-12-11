@@ -4,10 +4,13 @@ import {
     Typography,
 } from "@material-tailwind/react";
 import Image from "next/image";
+import { motion } from "motion/react"
 
-export function FeatureCard({ title, desc, img }) {
+export function FeatureCard({ title, desc, img, index }) {
     return (
-        <Card className="p-7 bg-gray-900 text-gray-100 transition-all delay-100 hover:bg-gray-200 hover:text-gray-900 cursor-pointer rounded-lg">
+        <motion.Card
+            className="p-7 bg-gray-900 text-gray-100 transition-all delay-10 cursor-pointer rounded-lg hover:shadow-2xl"
+        >
             <CardBody>
                 <Image src={`/images/features/${img}`} alt={title} width={70} height={70} />
                 <Typography variant="h6" className="my-2 text-lg capitalize">
@@ -17,6 +20,6 @@ export function FeatureCard({ title, desc, img }) {
                     {desc}
                 </Typography>
             </CardBody>
-        </Card>
+        </motion.Card>
     );
 }

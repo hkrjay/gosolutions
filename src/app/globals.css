@@ -7,3 +7,23 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7), 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+}
+
+/* Add hover effect with animation */
+.shadow-animate {
+  animation: shadowPulse 1.5s infinite;
+}
+.custom-shadow {
+  filter: drop-shadow(0 5px 5px rgba(255, 255, 255, 0.5));
+}

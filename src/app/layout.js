@@ -1,10 +1,10 @@
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import "./globals.css";
 import { Header } from './components/header';
 import { Footer } from './components/footer';
 
-export const plus_jakarta_sans = Plus_Jakarta_Sans({
-  weight: ['400', '500', '600', '700', '800'],
+export const poppins = Poppins({
+  weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 });
 
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${plus_jakarta_sans.className} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
         <Header />
         {children}
