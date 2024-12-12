@@ -55,8 +55,8 @@ export const GetStartedModal = ({ open, handleOpen, title = 'Get Started With Us
             </Button>
             <Button
               type="submit"
-              variant="gradient"
               color="blue"
+              className="bg-blue-900"
             >
               <span>Submit</span>
             </Button>

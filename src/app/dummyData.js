@@ -140,43 +140,43 @@ export const footerMenus = [
 
 export const servicesData = [
     {
-        id: 1,
-        service: 'Technical Support',
+        label: 'Technical Support',
+        value: 'technical-support',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
         img: 'technical-support.png'
     },
     {
-        id: 2,
-        service: 'software development',
+        label: 'software development',
+        value: 'software-development',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
         img: 'development.png'
     },
     {
-        id: 4,
-        service: 'web development',
+        label: 'web development',
+        value: 'web-development',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
         img: 'database.png'
     },
     {
-        id: 5,
-        service: 'Landing Pages',
+        label: 'Landing Pages',
+        value: 'landing-pages',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
         img: 'landing_pagespng.png'
     },
     {
-        id: 6,
-        service: 'network services',
+        label: 'network services',
+        value: 'network-services',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
         img: 'network.png'
     },
     {
-        id: 7,
-        service: 'UI/UX design',
+        label: 'UI/UX design',
+        value: 'uiux-design',
         desc: 'Provide management and maintenance of IT infrastructure, including servers, networks, and software.',
         price: 1000,
         img: 'ux-design.png'

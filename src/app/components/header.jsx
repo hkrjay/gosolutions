@@ -150,13 +150,15 @@ export function Header() {
       >
         <div className="flex items-center justify-between text-blue-gray-900 lg:max-w-screen-lg sm:max-w-screen-sm mx-auto">
           <div className="flex items-center gap-3">
-            <Image src={'/images/gs_logo.png'} alt="GoSolutions Logo" width={50} height={50} />
-            <Link
+            <Link href={"/"}>
+              <Image src={'/images/gs_logo.png'} alt="GoSolutions Logo" width={60} height={60} />
+            </Link>
+            {/* <Link
               href="/"
               className="mr-4 cursor-pointer py-1.5 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-700 text-xl font-extrabold"
             >
               GoSolutions
-            </Link>
+            </Link> */}
           </div>
           {/* <Image src='/images/logo.png' width={40} height={40} alt="logo" className="cursor-pointer py-1.5" /> */}
           <div className="hidden lg:block text-gray-200">

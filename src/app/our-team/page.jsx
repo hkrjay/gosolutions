@@ -7,6 +7,8 @@ import {
     IconButton,
     Typography,
 } from "@material-tailwind/react";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 
 function TeamCard({ img, name, title }) {
@@ -31,13 +33,13 @@ function TeamCard({ img, name, title }) {
                 </Typography>
                 <div className="flex items-center justify-center gap-1.5">
                     <IconButton variant="text" color="gray">
-                        <i className="fa-brands fa-twitter text-lg" />
+                        <FaXTwitter size={20} />
                     </IconButton>
                     <IconButton variant="text" color="gray">
-                        <i className="fa-brands fa-linkedin text-lg" />
+                        <FaLinkedinIn size={20} />
                     </IconButton>
                     <IconButton variant="text" color="gray">
-                        <i className="fa-brands fa-dribbble text-lg" />
+                        <FaInstagram size={20} />
                     </IconButton>
                 </div>
             </CardBody>
@@ -91,20 +93,19 @@ const members = [
 
 export function TeamSection12() {
     return (
-        <section className="min-h-screen py-8 px-8 lg:py-28">
-            <div className="container mx-auto">
+        <section className="min-h-screen lg:py-28 relative bg-black/90 pt-20 pb-16 bg-[url('/images/home/herobanner2.jpg')]">
+            <div className="absolute inset-0 bg-black opacity-90 z-0"></div>
+            <div className="lg:max-w-screen-lg sm:max-w-screen-sm mx-auto z-10 relative">
                 <div className="mb-16 text-center lg:mb-28">
                     <Typography
                         variant="h6"
-                        color="blue-gray"
-                        className="text-lg"
+                        className="text-lg text-gray-100"
                     >
                         Meet the Team
                     </Typography>
                     <Typography
                         variant="h1"
-                        color="blue-gray"
-                        className="my-2 !text-2xl lg:!text-4xl"
+                        className="my-2 !text-2xl lg:!text-4xl text-gray-100"
                     >
                         Behind the Success: Our Dedicated Team
                     </Typography>

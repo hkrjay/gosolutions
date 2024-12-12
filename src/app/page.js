@@ -169,40 +169,6 @@ export default function Home() {
         }
       ],
     },
-    {
-      label: "Svelte",
-      value: "svelte",
-      categories: [
-        {
-          label: 'HTML',
-          value: 'html',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'CSS',
-          value: 'css',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'JS',
-          value: 'js',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'REACT.JS',
-          value: 'react',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        }
-      ],
-    },
   ];
 
   const domainData = [
@@ -219,7 +185,7 @@ export default function Home() {
       value: "finance",
       desc: `Because it's about motivating the doers. Because I'm here
         to follow my dreams and inspire other people to follow their dreams, too.`,
-      img: 'img4.svg'
+      img: 'finance.jpg'
     },
     {
       label: "ecommerce",
@@ -227,14 +193,14 @@ export default function Home() {
       desc: `We're not always in the position that we want to be at.
         We're constantly growing. We're constantly making mistakes. We're
         constantly trying to express ourselves and actualize our dreams.`,
-      img: 'img5.png'
+      img: 'ecommerce.svg'
     },
     {
       label: "automotive",
       value: "automotive",
       desc: `Because it's about motivating the doers. Because I'm here
         to follow my dreams and inspire other people to follow their dreams, too.`,
-      img: 'healthcare.jpg'
+      img: 'automotive.svg'
     },
     {
       label: "real estate",
@@ -242,7 +208,7 @@ export default function Home() {
       desc: `We're not always in the position that we want to be at.
         We're constantly growing. We're constantly making mistakes. We're
         constantly trying to express ourselves and actualize our dreams.`,
-      img: 'healthcare.jpg'
+      img: 'realestate.svg'
     },
     {
       label: "education",
@@ -250,15 +216,7 @@ export default function Home() {
       desc: `We're not always in the position that we want to be at.
         We're constantly growing. We're constantly making mistakes. We're
         constantly trying to express ourselves and actualize our dreams.`,
-      img: 'healthcare.jpg'
-    },
-    {
-      label: "all industries",
-      value: "industries",
-      desc: `We're not always in the position that we want to be at.
-        We're constantly growing. We're constantly making mistakes. We're
-        constantly trying to express ourselves and actualize our dreams.`,
-      img: 'healthcare.jpg'
+      img: 'education.svg'
     },
   ];
 
@@ -373,8 +331,9 @@ export default function Home() {
 
   return (
     <>
-      <section className='bg-black/90 pt-20 pb-16'>
-        <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto'>
+      <section className="relative bg-black/90 pt-20 pb-16 bg-[url('/images/home/herobanner2.jpg')]">
+        <div className='absolute inset-0 bg-black opacity-90 z-0'></div>
+        <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto z-10 relative'>
           <div className='grid lg:grid-cols-2 sm:grid-cols-1 lg:gap-x-10 sm:gap-y-10 items-center'>
             <div className='flex flex-col gap-5'>
               <h1 className='lg:text-4xl sm:text-2xl text-gray-100 leading-snug font-medium'>We provide best services for your need.</h1>
@@ -427,7 +386,7 @@ export default function Home() {
                 ease: 'easeInOut',
               }}
             >
-              <img src='/images/home/img6.svg' className='w-11/12' />
+              <Image src='/images/home/img6.svg' alt='about gosolutions' width={469} height={469} className='w-11/12' />
             </motion.div>
             <div className='flex flex-col gap-3'>
               <h2 className='lg:text-3xl sm:text-2xl'>GoSolutions is technology partner</h2>
@@ -485,9 +444,9 @@ export default function Home() {
                 unmount: { y: 100 },
               }}
             >
-              <TabPanel value={serviceActiveTab} className='text-2xl text-gray-900 font-bold pt-0 capitalize'>{serviceActiveTab}</TabPanel>
               {data.map(({ value, categories }) => (
-                <TabPanel key={value} value={value} className="">
+                <TabPanel key={value} value={value} className="pt-0">
+                  <h2 className='text-2xl text-gray-900 font-bold pt-0 capitalize pb-5'>{serviceActiveTab}</h2>
                   <div className='grid lg:grid-cols-2 sm:grid-cols-1 grid-rows-2 lg:gap-10 sm:gap-5'>
                     {categories.map(({ label, desc, value }) => (
                       <div key={value} className='border-b border-gray-900 px-2 pb-4'>
@@ -596,7 +555,7 @@ export default function Home() {
             <div className='flex flex-col gap-5'>
               <h2 className='lg:text-4xl sm:text-3xl text-gray-100'>Have a project in mind?</h2>
               <p className='text-gray-400 lg:text-base sm:text-sm'>Let us turn your ideas into reality. Let&rsquo;s collaborate to build something remarkable and achieve success together.</p>
-              <Button variant="gradient" color='blue' className="bg-blue-700 w-fit">Let&rsquo;s Get Started</Button>
+              <Button variant="gradient" color='blue' className="bg-blue-700 w-fit" onClick={handleOpen}>Let&rsquo;s Get Started</Button>
             </div>
             <div className='grid grid-cols-2 grid-rows-2 lg:gap-10 sm:gap-5'>
               <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2'>
@@ -711,7 +670,7 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
                 <h3 className="text-xl font-bold">Save Max</h3>
                 <p className="text-sm mt-2 line-clamp-2">Save Max makes it effortless for you to search for Real Estate and MLS Listings in Canada.</p>
-                <Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button>
+                <Link href="https://savemax.com/" target='_blank'><Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button></Link>
               </div>
             </div>
             <div className="relative group bg-[url('/images/projectSS/platinumV.png')] w-full h-80 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg overflow-hidden">
@@ -720,7 +679,7 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
                 <h3 className="text-xl font-bold">Platinum Visionaries</h3>
                 <p className="text-sm mt-2 line-clamp-2">Platinum Visionaries experience the transformation of your skill set, paving the way for sustained success in the realm of digital marketing,</p>
-                <Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button>
+                <Link href="https://platinumvisionaries.com/" target='_blank'><Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button></Link>
               </div>
             </div>
           </div>

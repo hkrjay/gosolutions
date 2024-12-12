@@ -7,7 +7,7 @@ import { BsPinMap } from "react-icons/bs";
 import { AccordionComponent } from '../components/accordionComponent';
 
 const ContactUs = () => {
-  
+
   const handleSubmit = (e) => {
     e.preventDefault()
   }
@@ -48,23 +48,25 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <section className="relative lg:max-w-screen-xl sm:max-w-screen-sm mx-auto my-20 shadow-lg lg:p-10 sm:p-7">
-        <h2 className='text-center font-medium mb-10 lg:text-4xl sm:text-2xl'>Send us a message</h2>
-        <form className=''>
-          <div className='grid lg:grid-cols-2 sm:grid-cols-1 gap-x-10 sm:gap-y-5'>
-            <div>
-              <div className=''><Input type='text' color="blue" size='lg' label="Name" shrink={true} /></div>
-              <div className='mt-5'><Input type='email' color="blue" size='lg' label="Email" shrink={true} /></div>
-              <div className='mt-5'><Input type='tel' color="blue" size='lg' label="Number" shrink={true} /></div>
+      <section className="relative bg-gray-50 py-20">
+        <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto shadow-lg lg:p-10 sm:p-7'>
+          <h2 className='text-center font-medium mb-10 lg:text-4xl sm:text-2xl'>Send us a message</h2>
+          <form className=''>
+            <div className='grid lg:grid-cols-2 sm:grid-cols-1 gap-x-10 sm:gap-y-5'>
+              <div>
+                <div className=''><Input type='text' color="blue" size='lg' label="Name" shrink={true} /></div>
+                <div className='mt-5'><Input type='email' color="blue" size='lg' label="Email" shrink={true} /></div>
+                <div className='mt-5'><Input type='tel' color="blue" size='lg' label="Number" shrink={true} /></div>
+              </div>
+              <Textarea label="Message" color='blue' size='lg' shrink={true} />
             </div>
-            <Textarea label="Message" color='blue' size='lg' shrink={true} />
-          </div>
-          <Button type="submit" variant="gradient" className='mt-5' onSubmit={handleSubmit}>Send Message</Button>
-        </form>
+            <Button type="submit" variant="gradient" className='mt-5' onSubmit={handleSubmit}>Send Message</Button>
+          </form>
+        </div>
       </section>
 
       <section className='lg:max-w-screen-xl sm:max-w-screen-sm mx-auto py-10'>
-        <Typography variant={'h2'} className='mb-4 text-center lg:text-4xl sm:text-2xl'>Frequently Ask Questions</Typography>
+        <h2 className='mb-4 text-center lg:text-4xl sm:text-2xl font-medium'>Frequently Ask Questions</h2>
         <AccordionComponent />
       </section>
     </>

@@ -25,5 +25,5 @@ body {
   animation: shadowPulse 1.5s infinite;
 }
 .custom-shadow {
-  filter: drop-shadow(0 5px 5px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(255, 255, 255, 0.5));
 }

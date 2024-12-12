@@ -1,93 +1,111 @@
 import Image from 'next/image'
 import React from 'react'
-import { FaCheck, FaCode } from 'react-icons/fa'
+import { TfiLayers } from "react-icons/tfi";
+import { SlBadge, SlGraph, SlLayers } from "react-icons/sl";
+import { BsClipboard2Check } from 'react-icons/bs';
+import Link from 'next/link';
 
 const About = () => {
     return (
         <>
             <section className="relative h-full z-0 lg:py-36 sm:pt-20 sm:pb-16 bg-[url('/images/bg.webp')] bg-cover bg-center bg-fixed bg-no-repeat">
-                <div className="text-white lg:max-w-screen-xl sm:max-w-screen-sm mx-auto text-center">
-                    <p className='bg-gray-600/30 text-white p-2 w-fit mx-auto text-sm rounded-md'>About Us</p>
-                    <h1 className="lg:text-4xl sm:text-2xl font-semibold my-4">Providing Best IT Solutions</h1>
-                    <p className="lg:text-base sm:text-sm text-gray-400 leading-6 lg:px-72 sm:px-0">
-                        UpTech guarantees the highest standards in coding and design practices. Seamlessly integrating stunning styles and elements, UpTech empowers you to effortlessly create a professional website that truly shines.
+                <div className="text-white lg:max-w-screen-lg sm:max-w-screen-sm mx-auto text-center">
+                    <p className='bg-gray-600/30 text-white p-2 w-fit mx-auto lg:text-sm sm:text-xs rounded-md'>About Us</p>
+                    <h1 className="lg:text-4xl sm:text-2xl font-medium my-4">Providing Best IT Solutions</h1>
+                    <p className="lg:text-sm sm:text-sm text-gray-400 leading-6 lg:px-72 sm:px-0">
+                        Seamlessly integrating stunning styles and elements, UpTech empowers you to effortlessly create a professional website that truly shines.
                     </p>
                 </div>
             </section>
 
-            {/* <section className="relative lg:max-w-screen-xl sm:max-w-screen-sm rounded-3xl mx-auto h-ful py-16 my-10 z-0 bg-[url('/images/black_pattern.jpg')] bg-cover bg-fixed bg-no-repeat">
-                <div className="text-white lg:p-10 sm:p-5 text-center">
-                    <p className='bg-gray-600/40 p-2 w-fit mx-auto text-xs rounded-md'>Our Vision</p>
-                    <h1 className="lg:text-4xl sm:text-2xl font-semibold my-4">Trusted By Business</h1>
-                    <p className="mb-6 text-gray-400 leading-6 lg:w-9/12 sm:w-full lg:text-base sm:text-sm mx-auto">
-                        We aspire to create a digital landscape where technology seamlessly enhances productivity, connectivity, and sustainability, fostering a brighter, more efficient, and inclusive future for all.
-                    </p>
-                    <button className='px-3 py-2 text-sm rounded-md bg-blue-700 border hover:bg-transparent text-gray-200 border-blue-700'>Lets Work Together.</button>
-                </div>
-            </section> */}
-
-            <section className='lg:max-w-screen-xl sm:max-w-screen-sm mx-auto py-20'>
-                <div className='grid grid-cols-2 items-center'>
-                    <div className='mr-20 relative'>
-                        <Image src="/images/thumb1.webp" alt="about image" width={500} height={500} className="z-10 bg-cover w-[80%]" />
-                        <div className='absolute -right-24 -bottom-10'>
-                            <Image src="/images/thumb2.webp" alt="about image" width={500} height={500} className="z-20 bg-cover w-[70%]" />
-                        </div>
-                        <div className='absolute right-10 top-[70px] -z-10'>
-                            <Image src="/images/shape1.svg" alt="about image" width={133} height={200} className="bg-cover" />
-                        </div>
-                        <div className='absolute left-36 -bottom-[70px] -z-10'>
-                            <Image src="/images/shape2.svg" alt="about image" width={104} height={107} className="bg-cover" />
-                        </div>
+            <section className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto py-20'>
+                <div className='grid lg:grid-cols-2 sm:grid-cols-1 items-center gap-x-20 gap-y-10'>
+                    <div className='relative'>
+                        <Image src="/images/thumb1.webp" alt="about image" width={500} height={500} className="" />
                     </div>
                     <div className='flex flex-col gap-5'>
-                        <h1 className='text-4xl text-blue-900 font-semibold'>Exclusive technology to provide IT solutions</h1>
+                        <h1 className='lg:text-4xl sm:text-2xl text-gray-900 font-medium'>Exclusive technology to provide IT solutions</h1>
                         <p className='text-base'>
                             Each demo built with Teba will look different. You can customize almost anything in the appearance of your website with only a few clicks. Each demo built with Teba will look different.
                         </p>
-                        <ul className='list-none text-base leading-8'>
-                            <li className='flex items-center gap-3'><FaCheck className='text-blue-900' />Easily Build Custom Reports And Dashboards</li>
-                            <li className='flex items-center gap-3'><FaCheck className='text-blue-900' />Legacy Software Modernization</li>
-                            <li className='flex items-center gap-3'><FaCheck className='text-blue-900' />Software For The Open Enterprise</li>
-                            <li className='flex items-center gap-3'><FaCheck className='text-blue-900' />Software For The Open Enterprise</li>
-                            <li className='flex items-center gap-3'><FaCheck className='text-blue-900' />Software For The Open Enterprise</li>
+                        <ul className="list-none text-base flex flex-col gap-7">
+                            <li className="flex items-center lg:gap-3 sm:gap-5">
+                                <div className="w-14 aspect-square bg-blue-900 text-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <TfiLayers size={30} />
+                                </div>
+                                <div>
+                                    <h2 className="lg:text-xl sm:text-lg font-medium text-gray-900">Scalable IT Infrastructure</h2>
+                                    <p>Easily Build Custom Reports And Dashboards</p>
+                                </div>
+                            </li>
+                            <li className="flex items-center lg:gap-3 sm:gap-5">
+                                <div className="w-14 aspect-square bg-blue-900 text-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <SlBadge size={30} />
+                                </div>
+                                <div>
+                                    <h2 className="lg:text-xl sm:text-lg font-medium text-gray-900">Industry Expertise</h2>
+                                    <p>Easily Build Custom Reports And Dashboards</p>
+                                </div>
+                            </li>
                         </ul>
-                        <button className='px-3 py-2 text-sm w-fit rounded-md bg-blue-700 border hover:bg-transparent text-gray-200 border-blue-700'>Lets Work Together.</button>
                     </div>
                 </div>
             </section>
 
-            <section className="relative bg-[url('/images/heroImg.jpg')] bg-cover bg-center bg-fixed bg-no-repeat my-20">
-                <div className='absolute inset-0 bg-black opacity-75 z-0'></div>
-                <div className='relative lg:max-w-screen-xl sm:max-w-screen-sm mx-auto z-10'>
-                    <div className='py-20 grid grid-cols-2'>
-                        <div className='flex flex-col'>
-                            <p className='bg-gray-600/30 text-white p-2 w-fit text-xs rounded-md'>Why Choose Us</p>
-                            <h2 className='text-4xl py-5 text-blue-700 font-medium'>We Bringing New IT Business Solutions And Ideas</h2>
-                            <p className='pe-20 text-gray-200'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                            </p>
+            <section className='py-20 bg-gray-100'>
+                <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto'>
+                    <div className='text-center'>
+                        <p className='text-blue-900 font-medium uppercase text-md pb-3'>Process</p>
+                        <h2 className='lg:text-3xl sm:text-xl font-medium'>Comprehensive IT solutions, <br /> customized to drive Your business forward</h2>
+                        <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-x-10 gap-y-10 mt-14'>
+                            <div className='relative border-2 pb-14 pt-7 px-5 border-gray-500 rounded-xl flex flex-col items-center justify-center gap-5 hover:bg-gray-900 hover:text-gray-100 transition delay-75 ease-in-out group'>
+                                <div className='border border-blue-900 text-blue-900 w-20 h-20 rounded-full flex items-center justify-center group-hover:bg-blue-900 group-hover:text-gray-100 transition delay-75 ease-in-out'><BsClipboard2Check size={30} /></div>
+                                <h4 className='text-xl font-medium'>Assessment</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                <div className='absolute -bottom-5 w-14 h-14 rounded-full bg-gray-900 text-gray-100 flex items-center justify-center text-xl'>01</div>
+                            </div>
+                            <div className='relative border-2 pb-14 pt-7 px-5 border-gray-500 rounded-xl flex flex-col items-center justify-center gap-5 hover:bg-gray-900 hover:text-gray-100 transition delay-75 ease-in-out group'>
+                                <div className='border border-blue-900 text-blue-900 w-20 h-20 rounded-full flex items-center justify-center group-hover:bg-blue-900 group-hover:text-gray-100 transition delay-75 ease-in-out'><SlLayers size={30} /></div>
+                                <h4 className='text-xl font-medium'>Implementation</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                <div className='absolute -bottom-5 w-14 h-14 rounded-full bg-gray-900 text-gray-100 flex items-center justify-center text-xl'>02</div>
+                            </div>
+                            <div className='relative border-2 pb-14 pt-7 px-5 border-gray-500 rounded-xl flex flex-col items-center justify-center gap-5 hover:bg-gray-900 hover:text-gray-100 transition delay-75 ease-in-out group'>
+                                <div className='border border-blue-900 text-blue-900 w-20 h-20 rounded-full flex items-center justify-center group-hover:bg-blue-900 group-hover:text-gray-100 transition delay-75 ease-in-out'><SlGraph size={30} /></div>
+                                <h4 className='text-xl font-medium'>Optimization</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                <div className='absolute -bottom-5 w-14 h-14 rounded-full bg-gray-900 text-gray-100 flex items-center justify-center text-xl'>03</div>
+                            </div>
                         </div>
-                        <div className='grid grid-cols-2 grid-rows-2'>
-                            <div className='flex items-center gap-5'>
-                                <div className=''>
-                                    <div className='w-20 h-20 rounded-full bg-gray-200 text-black flex items-center justify-center'><FaCode size={30} /></div>
-                                    <h4 className='text-xl text-gray-200 w-full'>Web growths</h4>
-                                </div>
-                                <p className='text-sm text-gray-200'>Good knowledge becuase you something many times.</p>
-                            </div>
-                            <div className='flex items-center gap-5'>
-                                <div className='w-20 h-20 rounded-full bg-gray-200 text-black flex items-center justify-center'><FaCode size={30} /></div>
-                                <h4 className='text-xl text-gray-200'>Web growths</h4>
-                            </div>
-                            <div className='flex items-center gap-5'>
-                                <div className='w-20 h-20 rounded-full bg-gray-200 text-black flex items-center justify-center'><FaCode size={30} /></div>
-                                <h4 className='text-xl text-gray-200'>Web growths</h4>
-                            </div>
-                            <div className='flex items-center gap-5'>
-                                <div className='w-20 h-20 rounded-full bg-gray-200 text-black flex items-center justify-center'><FaCode size={30} /></div>
-                                <h4 className='text-xl text-gray-200'>Web growths</h4>
-                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="relative py-20 bg-[url('/images/services_bg.webp')] bg-cover bg-center bg-fixed">
+                <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto'>
+                    <div className='grid lg:grid-cols-2 sm:grid-cols-1'>
+                        <div className='bg-black/60 py-10 px-5 flex flex-col gap-5 rounded-lg'>
+                            <h2 className='lg:text-3xl sm:text-2xl text-gray-100'>Partner with Us for Seamless IT Solutions</h2>
+                            <p className='text-gray-300 text-sm'>Lacinia facilisis cras; volutpat parturient justo sed et hac. Scelerisque porttitor faucibus nullam augue non curae ante. Non fames purus luctus commodo vulputate ornare.</p>
+                            <Link href={"/contact-us"}>
+                                <button className='px-5 py-2 bg-gray-50 text-gray-900 rounded-3xl w-fit text-sm font-medium flex items-center gap-2'>
+                                    Contact Us Now
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={2}
+                                        stroke="currentColor"
+                                        className="h-5 w-5"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                                        />
+                                    </svg>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
