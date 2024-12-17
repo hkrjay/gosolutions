@@ -62,6 +62,17 @@ const ContactUs = () => {
             </div>
             <Button type="submit" variant="gradient" className='mt-5'>Send Message</Button>
           </form>
+          <form name="contact" netlify>
+            <p>
+              <label>Name <input type="text" name="name" /></label>
+            </p>
+            <p>
+              <label>Email <input type="email" name="email" /></label>
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
+          </form>
         </div>
       </section>
 
