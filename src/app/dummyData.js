@@ -42,12 +42,12 @@ export const headerMenu = [
                 lnk: 'web-development'
             },
             {
-                menu: 'Software Development',
-                lnk: 'software-development'
+                menu: 'Mobile Development',
+                lnk: 'mobile-development'
             },
             {
-                menu: 'technical support',
-                lnk: 'technical-support'
+                menu: 'Landing Pages',
+                lnk: 'landing-pages'
             },
         ]
     },
@@ -275,3 +275,64 @@ export const tabData = [
         desc: `While integrating the security with the DevOps approach has always been of high demand, this requires a completely different range of processes and tools. DevOps is already known to boast of an agile development methodology. Now when the inputs of the security experts I’ll be brought in a collaborative environment, the project will have an array of effective security safeguards.`,
     },
 ];
+
+export const serviceCategoriesData = [
+    {
+        label: 'Web Development',
+        value: 'web-development',
+        technologies: [
+            {
+                label: 'Vanilla JS',
+                value: 'js',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            },
+            {
+                label: 'React JS',
+                value: 'reactjs',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            },
+            {
+                label: 'Next JS',
+                value: 'nextjs',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            },
+            {
+                label: 'Vue JS',
+                value: 'vuejs',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            }
+        ]
+    },
+    {
+        label: 'Mobile Development',
+        value: 'mobile-development',
+        technologies: [
+            {
+                label: 'Flutter',
+                value: 'flutter',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            },
+        ]
+    },
+    {
+        label: 'Landing Pages',
+        value: 'landing-pages',
+        technologies: [
+            {
+                label: 'HTML',
+                value: 'html',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            },
+            {
+                label: 'CSS',
+                value: 'css',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            },
+            {
+                label: 'JS',
+                value: 'js',
+                desc: "We're committed to building sustainable and high-quality JavaScript solutions."
+            },
+        ]
+    }
+]

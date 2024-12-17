@@ -51,7 +51,7 @@ const ContactUs = () => {
       <section className="relative bg-gray-50 py-20">
         <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto shadow-lg lg:p-10 sm:p-7'>
           <h2 className='text-center font-medium mb-10 lg:text-4xl sm:text-2xl'>Send us a message</h2>
-          <form className=''>
+          <form className='' name="contact" netlify>
             <div className='grid lg:grid-cols-2 sm:grid-cols-1 gap-x-10 sm:gap-y-5'>
               <div>
                 <div className=''><Input type='text' color="blue" size='lg' label="Name" shrink={true} /></div>
@@ -60,7 +60,7 @@ const ContactUs = () => {
               </div>
               <Textarea label="Message" color='blue' size='lg' shrink={true} />
             </div>
-            <Button type="submit" variant="gradient" className='mt-5' onSubmit={handleSubmit}>Send Message</Button>
+            <Button type="submit" variant="gradient" className='mt-5'>Send Message</Button>
           </form>
         </div>
       </section>

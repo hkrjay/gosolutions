@@ -1,18 +1,30 @@
 'use client'
 
-import { tabData } from '@/app/dummyData'
+import { serviceCategoriesData, tabData } from '@/app/dummyData'
 import { Tab, Tabs, TabsBody, TabsHeader, Typography, TabPanel, Button } from '@material-tailwind/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCheck } from 'react-icons/fa'
 
-const Service = () => {
+const Service = ({ params, searchParams }) => {
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const getParams = async () => {
+            const { service } = await params
+            const filterData = serviceCategoriesData.filter(data => data.value === service)
+            setData(filterData)
+        }
+        getParams()
+    }, [])
+
     return (
         <>
             <section className="relative h-full z-0 lg:py-24 sm:pt-20 sm:pb-16 bg-[url('/images/web_dev_bg.jpg')] bg-cover bg-center bg-fixed bg-no-repeat">
                 <div className='absolute inset-0 bg-black opacity-70 z-0'></div>
                 <div className="text-white lg:max-w-screen-xl sm:max-w-screen-sm mx-auto text-center relative z-10">
                     <p className='bg-gray-600/30 text-white p-2 w-fit mx-auto text-sm rounded-md'>Service</p>
-                    <h1 className="lg:text-4xl sm:text-2xl font-semibold my-4">Web Development</h1>
+                    <h1 className="lg:text-4xl sm:text-2xl font-semibold my-4">{data[0]?.label}</h1>
                     <p className="lg:text-base sm:text-sm text-gray-400 leading-6 lg:px-72 sm:px-0">
                         UpTech guarantees the highest standards in coding and design practices. Seamlessly integrating stunning styles and elements, UpTech empowers you to effortlessly create a professional website that truly shines.
                     </p>
@@ -25,29 +37,20 @@ const Service = () => {
                         <img src='/images/sub_service_img.png' />
                         <div>
                             <p className='text-sm text-blue-900 font-medium sm:mt-10 lg:mt-0'># About Service</p>
-                            <Typography variant='h2' className='font-extrabold lg:text-4xl sm:text-3xl'>We Provide Best <br /> Web Development</Typography>
-                            <div className='grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-10 mt-10'>
-                                <div className=''>
-                                    <p className='text-blue-900 font-semibold'>01.</p>
-                                    <Typography variant='h5' className='py-3'>Vanilla JS</Typography>
-                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
+                            {data?.map(service => (
+                                <div key={service.value}>
+                                    <Typography variant='h2' className='font-extrabold lg:text-4xl sm:text-3xl capitalize'>We Provide Best <br /> {service.label}</Typography>
+                                    <div className='grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-10 mt-10'>
+                                        {service?.technologies?.map((tech, index) => (
+                                            <div className='' key={tech.value}>
+                                                <p className='text-blue-900 font-semibold'>0{index + 1}.</p>
+                                                <Typography variant='h5' className='py-3'>{tech?.label}</Typography>
+                                                <p className='text-gray-700'>{tech?.desc}</p>
+                                            </div>  
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className=''>
-                                    <p className='text-blue-900 font-semibold'>02.</p>
-                                    <Typography variant='h5' className='py-3'>React.js</Typography>
-                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
-                                </div>
-                                <div className=''>
-                                    <p className='text-blue-900 font-semibold'>03.</p>
-                                    <Typography variant='h5' className='py-3'>Next.js</Typography>
-                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
-                                </div>
-                                <div className=''>
-                                    <p className='text-blue-900 font-semibold'>04.</p>
-                                    <Typography variant='h5' className='py-3'>Vue.js</Typography>
-                                    <p className='text-gray-700'>We&rsquo;re committed to building sustainable and high-quality Java solutions.</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
