@@ -1,3 +1,6 @@
+import { IoLocationOutline } from "react-icons/io5";
+import { MdLocalPhone, MdOutlineMailOutline } from "react-icons/md";
+
 export const features = [
     {
         title: 'tailwindcss framework',
@@ -96,23 +99,23 @@ export const footerMenus = [
         title: "Services",
         items: [{
             item: 'Website Development',
-            link: '/services'
+            link: 'web-development'
         },
         {
             item: 'Landing Pages',
-            link: '/services'
+            link: 'landing-pages'
         },
         {
             item: 'Managed It Services',
-            link: '/services'
+            link: 'managed-it-services'
         },
         {
             item: 'database management',
-            link: '/services'
+            link: 'database-management'
         },
         {
             item: 'help desk support',
-            link: '/services'
+            link: 'help-desk-support'
         },
         ],
     },
@@ -122,17 +125,17 @@ export const footerMenus = [
             {
                 item: 'phone',
                 sub: '+918439202910',
-                icon: ''
+                icon: <MdLocalPhone size={22} />
             },
             {
                 item: 'Email',
                 sub: 'jaigupta1042@gmail.com',
-                icon: ''
+                icon: <MdOutlineMailOutline size={22} />
             },
             {
                 item: 'address',
                 sub: '100 S Main St, Los Angeles, CA',
-                icon: ''
+                icon: <IoLocationOutline size={22} />
             },
         ],
     },
@@ -336,3 +339,182 @@ export const serviceCategoriesData = [
         ]
     }
 ]
+
+export const homeServiceData = [
+    {
+        label: "web development",
+        value: "web development",
+        categories: [
+            {
+                label: 'Landing Pages',
+                value: 'landing-pages',
+                desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+            },
+            {
+                label: 'UI/UX Design',
+                value: 'uiux',
+                desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+            },
+            {
+                label: 'Dynamic Websites',
+                value: 'dynamic-website',
+                desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+            },
+            {
+                label: 'Web Applications',
+                value: 'web-app',
+                desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+            }
+        ],
+    },
+    {
+        label: "mobile development",
+        value: "mobile development",
+        categories: [
+            {
+                label: 'Android',
+                value: 'andriod',
+                desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+            },
+            {
+                label: 'IOS',
+                value: 'ios',
+                desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+            },
+        ],
+    },
+    {
+        label: "backend development",
+        value: "backend development",
+        categories: [
+            {
+                label: 'Creating APIs',
+                value: 'apis',
+                desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+            },
+        ],
+    },
+];
+
+export const technologiesData = [
+    {
+      label: "Front-End",
+      value: "frontend",
+      categories: [
+        {
+          label: 'React.js',
+          value: 'react',
+          img: 'reactjs.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: 'Next.js',
+          value: 'next',
+          img: 'nextjs.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: 'Vue.js',
+          value: 'vue',
+          img: 'vuejs.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: 'Java Script',
+          value: 'javascript',
+          img: 'js.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: 'Tailwind',
+          value: 'tailwind',
+          img: 'tailwindcss.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: 'Bootstrap',
+          value: 'bootstrap',
+          img: 'bootstrap.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        }
+      ],
+    },
+    {
+      label: "Back-End",
+      value: "backend",
+      categories: [
+        {
+          label: 'Node.js',
+          value: 'node',
+          img: 'nodejs.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: '.NET',
+          value: 'net',
+          img: 'netframework.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: 'Express',
+          value: 'express',
+          img: 'expressjs.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+        {
+          label: 'Java',
+          value: 'java',
+          img: 'java.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        },
+      ],
+    },
+    {
+      label: "Mobile",
+      value: "mobile",
+      categories: [
+        {
+          label: 'flutter',
+          value: 'flutter',
+          img: 'flutter.svg',
+          desc: `It really matters and then like it really doesn't matter.
+                  What matters is the people who are sparked by it. And the people
+                  who are like offended by it, it doesn't matter.`,
+        }
+      ],
+    },
+  ];

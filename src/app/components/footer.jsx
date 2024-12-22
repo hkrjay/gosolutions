@@ -22,9 +22,12 @@ export const Footer = () => {
                                 {title}
                             </Typography>
                             {items.map((menu, index) => (
-                                <li key={index}>
+                                <li key={index} className='flex items-center gap-3'>
+                                    {menu?.icon && (
+                                        <div className='text-blue-700'>{menu?.icon}</div>
+                                    )}
                                     <Link
-                                        href={menu.link ?? '#'}
+                                        href={title === "Services" ? `/services/${menu.link}` : menu.link ?? '#'}
                                         className="py-1 text-sm w-fit font-normal text-gray-500 transition-colors hover:text-blue-700 capitalize"
                                     >
                                         {menu.item}

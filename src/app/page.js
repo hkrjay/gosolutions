@@ -22,154 +22,67 @@ import { IoDiamondOutline, IoPeopleOutline } from 'react-icons/io5'
 import { SlRocket } from "react-icons/sl";
 import { GoCodeSquare } from "react-icons/go";
 import GetStartedModal from './components/getStartedModal'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { homeServiceData, technologiesData } from './dummyData'
+import { ToastPopup } from './components/toastPopup'
+import { PostApi } from './lib/postapi'
 
 export default function Home() {
+
+  const nameRegex = /^[a-zA-Z\s]{3,30}$/
+  const telRegex = /^\d{10}$/
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   const [open, setOpen] = useState(false);
   const [serviceActiveTab, setServiceActiveTab] = useState("web development");
   const [domainActiveTab, setDomainActiveTab] = useState('healthcare')
   const [technologyActiveTab, setTechnologyActiveTab] = useState('frontend')
+  const [showToast, setShowToast] = useState(false)
+  const [formValues, setFormValues] = useState({
+    name: '',
+    tel: '',
+    email: '',
+    message: ''
+  })
+
+  const handleFormValuesChange = (e) => {
+    const { name, value } = e.target
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleResetForm = () => {
+    setFormValues({
+      name: '',
+      tel: '',
+      email: '',
+      message: ''
+    })
+  }
+
+  const handleSubmitForm = async (e) => {
+    e.preventDefault()
+    const url = 'http://localhost:4004/contact'
+    const response = await PostApi(url, formValues)
+    if (response.ok) {
+      handleResetForm()
+      setShowToast(true)
+      setTimeout(() => {
+        setShowToast(false)
+      }, 3000)
+    }
+  }
 
   const handleOpen = () => setOpen(!open);
 
-
-  const data = [
-    {
-      label: "web development",
-      value: "web development",
-      categories: [
-        {
-          label: 'HTML',
-          value: 'html',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'CSS',
-          value: 'css',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'JS',
-          value: 'js',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'REACT.JS',
-          value: 'react',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        }
-      ],
-    },
-    {
-      label: "mobile development",
-      value: "mobile development",
-      categories: [
-        {
-          label: 'HTML',
-          value: 'html',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'CSS',
-          value: 'css',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'JS',
-          value: 'js',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'REACT.JS',
-          value: 'react',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        }
-      ],
-    },
-    {
-      label: "branding service",
-      value: "branding service",
-      categories: [
-        {
-          label: 'HTML',
-          value: 'html',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'CSS',
-          value: 'css',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'JS',
-          value: 'js',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'REACT.JS',
-          value: 'react',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        }
-      ],
-    },
-    {
-      label: "digital marketing",
-      value: "digital marketing",
-      categories: [
-        {
-          label: 'HTML',
-          value: 'html',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'CSS',
-          value: 'css',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'JS',
-          value: 'js',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'REACT.JS',
-          value: 'react',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        }
-      ],
-    },
-  ];
 
   const domainData = [
     {
@@ -220,125 +133,18 @@ export default function Home() {
     },
   ];
 
-  const technologyData = [
-    {
-      label: "Front-End",
-      value: "frontend",
-      categories: [
-        {
-          label: 'React.js',
-          value: 'react',
-          img: 'reactjs.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'Next.js',
-          value: 'next',
-          img: 'nextjs.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'Vue.js',
-          value: 'vue',
-          img: 'vuejs.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'Java Scripts',
-          value: 'javascript',
-          img: 'js.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'Tailwind',
-          value: 'tailwind',
-          img: 'tailwindcss.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'Bootstrap',
-          value: 'bootstrap',
-          img: 'bootstrap.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        }
-      ],
-    },
-    {
-      label: "Back-End",
-      value: "backend",
-      categories: [
-        {
-          label: 'Node.js',
-          value: 'node',
-          img: 'nodejs.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: '.NET',
-          value: 'net',
-          img: 'netframework.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'Express',
-          value: 'express',
-          img: 'expressjs.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-        {
-          label: 'Java',
-          value: 'java',
-          img: 'java.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        },
-      ],
-    },
-    {
-      label: "Mobile",
-      value: "mobile",
-      categories: [
-        {
-          label: 'flutter',
-          value: 'flutter',
-          img: 'flutter.svg',
-          desc: `It really matters and then like it really doesn't matter.
-                  What matters is the people who are sparked by it. And the people
-                  who are like offended by it, it doesn't matter.`,
-        }
-      ],
-    },
-  ];
-
   return (
     <>
       <section className="relative bg-black/90 pt-20 pb-16 bg-[url('/images/home/herobanner2.jpg')]">
         <div className='absolute inset-0 bg-black opacity-90 z-0'></div>
-        <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto z-10 relative'>
-          <div className='grid lg:grid-cols-2 sm:grid-cols-1 lg:gap-x-10 sm:gap-y-10 items-center'>
+        <div className='lg:max-w-screen-lg sm:max-w-screen-sm md:max-w-screen-md mx-auto z-10 relative'>
+          <div className='grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:gap-x-10 sm:gap-y-10 items-center'>
             <div className='flex flex-col gap-5'>
-              <h1 className='lg:text-4xl sm:text-2xl text-gray-100 leading-snug font-medium'>We provide best services for your need.</h1>
-              <p className='lg:text-base sm:text-sm text-gray-100'>We carry more than just good coding skills. Our experience makes us stand out from other web development.</p>
-              <button className='lg:px-5 lg:py-3 sm:px-3 sm:py-2 text-sm border border-blue-800 bg-blue-800 w-fit text-gray-100 rounded-lg'>Contact Us Now!</button>
+              <h1 className='lg:text-4xl sm:text-2xl text-gray-100 leading-snug font-medium'>Empowering Your Vision with Tailored IT Solutions</h1>
+              <p className='lg:text-base sm:text-sm text-gray-100'>Beyond exceptional coding, we deliver innovative strategies and solutions that drive success. Let our expertise transform your ideas into impactful digital experiences.</p>
+              <Link href={"/contact-us"}>
+                <button className='lg:px-5 lg:py-3 sm:px-3 sm:py-2 text-sm border border-blue-800 bg-blue-800 w-fit text-gray-100 rounded-lg'>Contact Us Now!</button>
+              </Link>
             </div>
             <motion.div
               className='custom-shadow'
@@ -388,9 +194,13 @@ export default function Home() {
             >
               <Image src='/images/home/img6.svg' alt='about gosolutions' width={469} height={469} className='w-11/12' />
             </motion.div>
-            <div className='flex flex-col gap-3'>
-              <h2 className='lg:text-3xl sm:text-2xl'>GoSolutions is technology partner</h2>
-              <p className='lg:text-base sm:text-sm'>that helps business achieve efficiency through digital transformation. We do this by providing full-cycle software developement services from solutions design up to implementation & maintenance</p>
+            <div className="flex flex-col gap-3">
+              <h2 className="lg:text-3xl sm:text-2xl">
+                GoSolutions: Your Trusted Technology Partner
+              </h2>
+              <p className="lg:text-base sm:text-sm">
+                At GoSolutions, we empower businesses to achieve operational efficiency through seamless digital transformation. From solution design to implementation and maintenance, we offer comprehensive software development services tailored to your unique needs.
+              </p>
             </div>
           </div>
         </div>
@@ -426,7 +236,7 @@ export default function Home() {
                   "bg-transparent shadow-none rounded-none",
               }}
             >
-              {data.map(({ label, value }) => (
+              {homeServiceData.map(({ label, value }) => (
                 <Tab
                   key={value}
                   value={value}
@@ -444,7 +254,7 @@ export default function Home() {
                 unmount: { y: 100 },
               }}
             >
-              {data.map(({ value, categories }) => (
+              {homeServiceData.map(({ value, categories }) => (
                 <TabPanel key={value} value={value} className="pt-0">
                   <h2 className='text-2xl text-gray-900 font-bold pt-0 capitalize pb-5'>{serviceActiveTab}</h2>
                   <div className='grid lg:grid-cols-2 sm:grid-cols-1 grid-rows-2 lg:gap-10 sm:gap-5'>
@@ -558,32 +368,32 @@ export default function Home() {
               <Button variant="gradient" color='blue' className="bg-blue-700 w-fit" onClick={handleOpen}>Let&rsquo;s Get Started</Button>
             </div>
             <div className='grid grid-cols-2 grid-rows-2 lg:gap-10 sm:gap-5'>
-              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2'>
+              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2 group'>
                 <IoPeopleOutline size={40} className='text-gray-100' />
                 <div>
                   <h4 className='text-gray-100 text-3xl'>20+</h4>
-                  <p className='text-gray-400 text-sm'>Team Memebers</p>
+                  <p className='text-gray-400 text-sm group-hover:text-gray-50'>Team Memebers</p>
                 </div>
               </div>
-              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2'>
+              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2 group'>
                 <GoCodeSquare size={40} className='text-gray-100' />
                 <div>
                   <h4 className='text-gray-100 text-3xl'>7+</h4>
-                  <p className='text-gray-400 text-sm'>years of Experience</p>
+                  <p className='text-gray-400 text-sm group-hover:text-gray-50'>years of Experience</p>
                 </div>
               </div>
-              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2'>
+              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2 group'>
                 <IoPeopleOutline size={40} className='text-gray-100' />
                 <div>
                   <h4 className='text-gray-100 text-3xl'>10+</h4>
-                  <p className='text-gray-400 text-sm'>Team Memebers</p>
+                  <p className='text-gray-400 text-sm group-hover:text-gray-50'>Team Memebers</p>
                 </div>
               </div>
-              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2'>
+              <div className='flex items-center gap-5 hover:shadow-xl px-3 py-2 group'>
                 <IoPeopleOutline size={40} className='text-gray-100' />
                 <div>
                   <h4 className='text-gray-100 text-3xl'>10+</h4>
-                  <p className='text-gray-400 text-sm'>Team Memebers</p>
+                  <p className='text-gray-400 text-sm group-hover:text-gray-50'>Team Memebers</p>
                 </div>
               </div>
             </div>
@@ -621,7 +431,7 @@ export default function Home() {
                   "bg-transparent shadow-none rounded-none",
               }}
             >
-              {technologyData.map(({ label, value }) => (
+              {technologiesData.map(({ label, value }) => (
                 <Tab
                   key={value}
                   value={value}
@@ -640,7 +450,7 @@ export default function Home() {
               }}
             >
               <TabPanel value={technologyActiveTab} className='lg:text-2xl sm:text-xl text-gray-900 font-bold pt-0 capitalize'>{technologyActiveTab} Development Technologies</TabPanel>
-              {technologyData.map(({ value, categories }) => (
+              {technologiesData.map(({ value, categories }) => (
                 <TabPanel key={value} value={value} className="">
                   <div className='grid lg:grid-cols-2 sm:grid-cols-1 grid-rows-2 gap-10'>
                     {categories.map(({ label, desc, value, img }) => (
@@ -662,10 +472,72 @@ export default function Home() {
 
       <section className='py-20 bg-gray-900'>
         <div className='lg:max-w-screen-lg sm:max-w-screen-sm mx-auto'>
-          <h2 className='text-center lg:text-4xl sm:text-3xl font-medium text-gray-100'>Recent Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+          <h2 className='text-center lg:text-4xl sm:text-3xl font-medium text-gray-100 mb-10'>Recent Projects</h2>
+
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={2}
+            modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard]}
+            keyboard
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            navigation
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              0: {
+                slidesPerView: 1,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <div className="relative group bg-[url('/images/projectSS/savemaxweb.png')] w-full h-80 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg overflow-hidden">
+                <div className="absolute top-5 right-5 bg-red-100 text-red-900 px-3 py-1 text-xs font-medium rounded-xl shadow-md">Real Estate</div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
+                  <h3 className="text-xl font-bold">Save Max</h3>
+                  <p className="text-sm mt-2 line-clamp-2">Save Max makes it effortless for you to search for Real Estate and MLS Listings in Canada.</p>
+                  <Link href="https://savemax.com/" target='_blank'><Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button></Link>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="relative group bg-[url('/images/projectSS/platinumV.png')] w-full h-80 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg overflow-hidden">
+                {/* <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/50 transition-opacity duration-300 group-hover:opacity-80"></div> */}
+                <div className="absolute top-5 right-5 bg-amber-50 text-amber-900 px-3 py-1 text-xs font-medium rounded-xl shadow-md">Digital Marketing</div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
+                  <h3 className="text-xl font-bold">Platinum Visionaries</h3>
+                  <p className="text-sm mt-2 line-clamp-2">Platinum Visionaries experience the transformation of your skill set, paving the way for sustained success in the realm of digital marketing,</p>
+                  <Link href="https://platinumvisionaries.com/" target='_blank'><Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button></Link>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="relative group bg-[url('/images/projectSS/savemaxweb.png')] w-full h-80 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg overflow-hidden">
+                <div className="absolute top-5 right-5 bg-red-100 text-red-900 px-3 py-1 text-xs font-medium rounded-xl shadow-md">Real Estate</div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
+                  <h3 className="text-xl font-bold">Save Max</h3>
+                  <p className="text-sm mt-2 line-clamp-2">Save Max makes it effortless for you to search for Real Estate and MLS Listings in Canada.</p>
+                  <Link href="https://savemax.com/" target='_blank'><Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button></Link>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="relative group bg-[url('/images/home/herobanner2.jpg')] w-full h-80 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/50 transition-opacity duration-300 group-hover:opacity-80"></div>
+                <div className="absolute top-5 right-5 bg-amber-50 text-amber-900 px-3 py-1 text-xs font-medium rounded-xl shadow-md">Digital Marketing</div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
+                  <h3 className="text-xl font-bold">Platinum Visionaries</h3>
+                  <p className="text-sm mt-2 line-clamp-2">Platinum Visionaries experience the transformation of your skill set, paving the way for sustained success in the realm of digital marketing,</p>
+                  <Link href="https://platinumvisionaries.com/" target='_blank'><Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button></Link>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
             <div className="relative group bg-[url('/images/projectSS/savemaxweb.png')] w-full h-80 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/70 transition-opacity duration-300 group-hover:opacity-80"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/50 transition-opacity duration-300 group-hover:opacity-80"></div>
               <div className="absolute top-5 right-5 bg-red-100 text-red-900 px-3 py-1 text-xs font-medium rounded-xl shadow-md">Real Estate</div>
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
                 <h3 className="text-xl font-bold">Save Max</h3>
@@ -674,7 +546,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative group bg-[url('/images/projectSS/platinumV.png')] w-full h-80 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/70 transition-opacity duration-300 group-hover:opacity-80"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/50 transition-opacity duration-300 group-hover:opacity-80"></div>
               <div className="absolute top-5 right-5 bg-amber-50 text-amber-900 px-3 py-1 text-xs font-medium rounded-xl shadow-md">Digital Marketing</div>
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-900 bg-opacity-60 backdrop-blur-sm text-gray-100 rounded-t-lg transition-transform duration-300 transform group-hover:translate-y-0 translate-y-full">
                 <h3 className="text-xl font-bold">Platinum Visionaries</h3>
@@ -682,7 +554,7 @@ export default function Home() {
                 <Link href="https://platinumvisionaries.com/" target='_blank'><Button size='sm' className="mt-4 capitalize bg-blue-900 text-sm">Preview</Button></Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -697,16 +569,53 @@ export default function Home() {
               <h5 className='text-xl font-medium'>Start a conversation</h5>
               <p className='lg:text-base sm:text-sm pt-2'>We&rsquo;d like to hear from you. Use the contact form below and we&rsquo;ll get back to you shortly.</p>
             </div>
-            <form>
+            <form method='POST' onSubmit={handleSubmitForm}>
               <div className='grid lg:grid-cols-3 sm:grid-cols-1 sm:gap-y-5 gap-x-5 pt-5'>
-                <Input type='text' label="Full Name" />
-                <Input type='tel' label="Phone Number" />
-                <Input label="Email" />
+                <Input
+                  type='text'
+                  label="Full Name"
+                  color="blue"
+                  name='name'
+                  maxLength={30}
+                  value={formValues.name}
+                  error={formValues.name.length > 0 ? !nameRegex.test(formValues.name) : false}
+                  onChange={handleFormValuesChange}
+                  required
+                />
+                <Input
+                  label="Email"
+                  name='email'
+                  color="blue"
+                  maxLength={50}
+                  value={formValues.email}
+                  error={formValues.email.length > 0 ? !emailRegex.test(formValues.email) : false}
+                  onChange={handleFormValuesChange}
+                  required
+                />
+                <Input
+                  type='tel'
+                  name='tel'
+                  pattern="[0-9]*"
+                  inputMode="numeric"
+                  color="blue"
+                  maxLength={10}
+                  error={formValues.tel.length > 0 ? !telRegex.test(formValues.tel) : false}
+                  label="Contact Number"
+                  value={formValues.tel}
+                  onChange={handleFormValuesChange}
+                />
               </div>
               <div className="mt-7">
-                <Textarea label="How can we help you?" className='' />
+                <Textarea
+                  label="How can we help you?"
+                  className=''
+                  name='message'
+                  color="blue"
+                  value={formValues.message}
+                  onChange={handleFormValuesChange}
+                />
               </div>
-              <Checkbox
+              {/* <Checkbox
                 color='blue'
                 label={
                   <Typography color="blue-gray" className="lg:text-base sm:text-sm font-medium">
@@ -720,10 +629,18 @@ export default function Home() {
                     .
                   </Typography>
                 }
-              />
-              <div className='flex items-center lg:mt-0 sm:mt-5 gap-5 justify-end'>
-                <Button variant="outlined" color='red'>Cancel</Button>
-                <Button variant="filled" color='blue' className='bg-blue-900'>Send Request</Button>
+              /> */}
+              <div className='flex items-center mt-5 gap-5 justify-end'>
+                <Button type='button' variant="outlined" color='red' onClick={handleResetForm}>Reset</Button>
+                <Button
+                  type='submit'
+                  variant="filled"
+                  color='blue'
+                  className='bg-blue-900'
+                  disabled={!nameRegex.test(formValues.name) || !emailRegex.test(formValues.email)}
+                >
+                  Send Request
+                </Button>
               </div>
             </form>
           </div>
@@ -742,6 +659,7 @@ export default function Home() {
       </section>
 
       <GetStartedModal open={open} handleOpen={handleOpen} />
+      {showToast && <div className='fixed top-20 right-5 z-50'><ToastPopup message={"Your Response has submitted. We will contact you soon."} /></div>}
     </>
   )
 }
