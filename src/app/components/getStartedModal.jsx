@@ -4,13 +4,16 @@ import React, { useState } from "react";
 import { Button, Dialog, DialogBody, DialogHeader, Input, Textarea } from "@material-tailwind/react";
 import { PostApi } from "../lib/postapi";
 import { ToastPopup } from "./toastPopup";
+import { saveFormDataRealtime } from "../firebaseConfigure";
+import { usePathname } from "next/navigation";
 
 export const GetStartedModal = ({ open, handleOpen, title = 'Get Started With Us.' }) => {
 
   const nameRegex = /^[a-zA-Z\s]{3,30}$/
   const telRegex = /^\d{10}$/
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
+  
+  const pathname = usePathname()
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -28,9 +31,10 @@ export const GetStartedModal = ({ open, handleOpen, title = 'Get Started With Us
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const url = 'http://localhost:4004/contact'
-    const response = await PostApi(url, values)
-    console.log({ response });
+    // const url = 'http://localhost:4004/contact'
+    // const response = await PostApi(url, values)
+    values.url = pathname
+    await saveFormDataRealtime(values);
     setShowToast(true)
     setTimeout(() => {
       setShowToast(false)

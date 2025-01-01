@@ -7,6 +7,8 @@ import { BsPinMap } from "react-icons/bs";
 import { AccordionComponent } from '../components/accordionComponent';
 import { PostApi } from '../lib/postapi';
 import { ToastPopup } from '../components/toastPopup';
+import { saveFormDataRealtime } from '../firebaseConfigure';
+import { usePathname } from 'next/navigation';
 
 const ContactUs = () => {
 
@@ -14,6 +16,7 @@ const ContactUs = () => {
   const telRegex = /^\d{10}$/
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+  const pathname = usePathname()
   const [values, setValues] = useState({
     username: '',
     useremail: '',
@@ -46,16 +49,18 @@ const ContactUs = () => {
       name: values.username,
       email: values.useremail,
       tel: values.usernumber,
-      message: values.usermessage
+      message: values.usermessage,
+      url: pathname
     }
-    const response = await PostApi(url, payload)
-    if (response.ok) {
-      clearValues()
-      setShowToast(true)
-      setTimeout(() => {
-        setShowToast(false)
-      }, 3000)
-    }
+    await saveFormDataRealtime(payload);
+    // const response = await PostApi(url, payload)
+    // if (response.ok) {
+    clearValues()
+    setShowToast(true)
+    setTimeout(() => {
+      setShowToast(false)
+    }, 3000)
+    // }
   }
 
   return (

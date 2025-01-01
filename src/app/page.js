@@ -32,6 +32,8 @@ import 'swiper/css/scrollbar';
 import { homeServiceData, technologiesData } from './dummyData'
 import { ToastPopup } from './components/toastPopup'
 import { PostApi } from './lib/postapi'
+import { saveFormDataRealtime } from './firebaseConfigure'
+import { usePathname } from 'next/navigation'
 
 export default function Home() {
 
@@ -39,6 +41,7 @@ export default function Home() {
   const telRegex = /^\d{10}$/
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+  const pathname = usePathname()
   const [open, setOpen] = useState(false);
   const [serviceActiveTab, setServiceActiveTab] = useState("web development");
   const [domainActiveTab, setDomainActiveTab] = useState('healthcare')
@@ -70,15 +73,17 @@ export default function Home() {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault()
-    const url = 'http://localhost:4004/contact'
-    const response = await PostApi(url, formValues)
-    if (response.ok) {
-      handleResetForm()
-      setShowToast(true)
-      setTimeout(() => {
-        setShowToast(false)
-      }, 3000)
-    }
+    // const url = 'http://localhost:4004/contact'
+    // const response = await PostApi(url, formValues)
+    // if (response.ok) {
+    formValues.url = pathname
+    await saveFormDataRealtime(formValues);
+    handleResetForm()
+    setShowToast(true)
+    setTimeout(() => {
+      setShowToast(false)
+    }, 3000)
+    // }
   }
 
   const handleOpen = () => setOpen(!open);
